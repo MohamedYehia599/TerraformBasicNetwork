@@ -19,7 +19,6 @@ The module includes the following components:
 ### Inputs
 The module requires the following input variables:
 
-- `provider_region`: The AWS region where the infrastructure will be deployed.
 - `vpc_cidr`: The CIDR block for the VPC.
 - `subnet_cidr`: The first two octets of the subnet CIDR (e.g., `10.0.`) to be used for creating subnets.
 - `first_availability_zone`: The first availability zone for resource placement.
@@ -49,10 +48,8 @@ To use this module, include it in your Terraform configuration as follows:
 ```hcl
 module "basic_network" {
   source                  = "github.com/MohamedYehia599/TerraformBasicNetwork?ref=main"
-  provider_region         = "us-west-2"
   vpc_cidr                = "10.0.0.0/16"
   subnet_cidr             = "10.0."
   first_availability_zone  = "us-west-2a"
   second_availability_zone = "us-west-2b"
 }
-
